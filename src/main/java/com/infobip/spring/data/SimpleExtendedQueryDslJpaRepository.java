@@ -30,7 +30,7 @@ public class SimpleExtendedQueryDslJpaRepository<T, ID extends Serializable> ext
     private final Supplier<JPASQLQuery<T>> jpaSqlFactory;
     private final EntityManager entityManager;
 
-    SimpleExtendedQueryDslJpaRepository(JpaEntityInformation<T, ID> entityInformation,
+    protected SimpleExtendedQueryDslJpaRepository(JpaEntityInformation<T, ID> entityInformation,
                                         EntityManager entityManager) throws SQLException {
         super(entityInformation, entityManager, SimpleEntityPathResolver.INSTANCE);
         this.jpaQueryFactory = new JPAQueryFactory(HQLTemplates.DEFAULT, entityManager);
